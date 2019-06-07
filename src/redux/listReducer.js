@@ -114,7 +114,11 @@ const initialState={
 const reducerFilterComedy=(state)=>{
   return {
     ...state,
-    movies:state.movies.filter(item =>item.genre.name==="Comedy")  
+    // movies:state.movies.map(item =>item.genre.name==="Comedy") 
+    movies:state.movies.map(movie=>{
+      console.log(movie._id);
+      
+    })  
   }
 
 }
@@ -129,10 +133,7 @@ const reducerFilterAction=(state)=>{
 const reducerFilterThriller=(state)=>{
   return{
     ...state,
-     movies:state.movies.length>0
-     ?state.movies.filter(item =>item.genre.name==="Thriller")
-     :"yyyyyyyyyyy"
-
+     movies:state.movies.filter(item =>item.genre.name==="Thriller")
 }
 }
 
