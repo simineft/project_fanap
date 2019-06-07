@@ -11,7 +11,6 @@ class ListMovie extends Component {
     mysort:[],
     currentPage: 1,
     totalPage:2,
-    mySelected:this.props.itemList
   }
     removeUser = id => {
       this.props.removeFromtable(id)
@@ -72,7 +71,7 @@ class ListMovie extends Component {
                   </td>
               </tr>
               ))
-              :this.state.mySelected
+              :"null"
             
             }
           </tbody>
