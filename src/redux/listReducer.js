@@ -119,7 +119,7 @@ const initialState={
 
  
 const reducer=(state=initialState ,action )=>{
- let  selectedMovies = state
+ 
   
     switch (action.type) {
         case REMOVE_FROM_LIST:
