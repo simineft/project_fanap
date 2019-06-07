@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Sat Jun 08 2019 01:39:25 GMT+0430 (Iran Daylight Time)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .autogit/logs/log-8-5-2019-1-9-24.txt
+
+
+Deleted files:
+
+
+Renamed files:
