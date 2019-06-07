@@ -19,17 +19,17 @@ class ListMovie extends Component {
       };
 
   
-      sortAscending=()=>{
+    sortAscending=()=>{
         this.setState({
           myitem:this.props.sortFromtable()
         })
     
-      }
+    }
 
-      findAllGenres=()=>{
+    findAllGenres=()=>{
         this.props.myFindAllGenresMovies()
         
-      }
+    }
    
          
     findAction=()=>{

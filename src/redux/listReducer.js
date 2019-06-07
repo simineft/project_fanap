@@ -1,4 +1,4 @@
-import { statement } from "@babel/template";
+
 
 const REMOVE_FROM_LIST="REMOVE-FROM-LIST";
 const SORT_LIST_TABLE="SORT-LIST-TABLE";
@@ -108,58 +108,50 @@ const initialState={
         }
        
       ],
-  
      
+}
+
+const reducerFilterComedy=(state)=>{
+  return {
+    ...state,
+    movies:state.movies.filter(item =>item.genre.name==="Comedy")  
+  }
+
 }
 
 
 
-
-
-
- 
 const reducer=(state=initialState ,action )=>{
- 
-  
     switch (action.type) {
         case REMOVE_FROM_LIST:
             return{
                 ...state,
                 movies:state.movies.filter(movie => movie._id !== action.itemId)
             }
-            case SORT_LIST_TABLE:
-              return{
+        case SORT_LIST_TABLE:
+            return{
                   ...state,
                 movies:state.movies.sort((a,b)=> a.numberInStock-b.numberInStock)
-              }
-              case ALL_GENRES_MOVIES:
-                return{
+            }
+        case ALL_GENRES_MOVIES:
+              return{
                     ...state,
-                    movies:state.movies
-                 
+                    movies:state.movies 
                 }
-                case ACTION_MOVIES:
-                  return{
+        case ACTION_MOVIES:
+               return{
                    ...state,
                     movies:state.movies.filter(item =>item.genre.name==="Action")   
-                  }
-                  case  COMEDY_MOVIES:
-                    return{
-                        ...state,
-                      movies: state.movies.filter(item =>item.genre.name==="Comedy")
-                    }
-                    case THRILLER_MOVIES:
-                      return{
-                          ...state,
-                        movies: state.movies.filter(item =>item.genre.name==="Thriller")
-                          
-                       
-                      }
-                 
-             
-            
+                }
+        case  COMEDY_MOVIES:return reducerFilterComedy(state)
+        case THRILLER_MOVIES:
+               return{
+                      ...state,
+                       movies: state.movies.filter(item =>item.genre.name==="Thriller")
+       
+                }
               
-        default:
+         default:
                 return state;
     }
 
@@ -170,9 +162,9 @@ export{
   sortListTable,
   likeListBlack,
   findAllGenres,
-   actionMovies,
-   comedyMovies,
-   thrillerMovies
+  actionMovies,
+  comedyMovies,
+  thrillerMovies
   }
 
 export default reducer
