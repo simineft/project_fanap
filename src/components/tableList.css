@@ -1,0 +1,59 @@
+ .table {
+    padding: 20px;
+    box-shadow: 8px 11px 15px 1px #4c151538;
+  }
+
+  .showList{
+    display: flex;
+  
+  }
+  .list-group{
+    margin-left: 30px;
+  }
+
+  .table button:hover {
+     opacity: .6;
+  }
+
+  h1{
+      text-align: center;
+      padding: 30px;
+  }
+
+  .App {
+    text-align: center;
+  }
+  
+  .page-link {
+    margin: 2px;
+    display: inline-block;
+    padding: 2px;
+    border-radius: 20px;
+    text-decoration: none;
+  }
+  
+  .current-link {
+    background-color: #0074c2;
+    display: inline-block;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  
+  a,
+  a:link,
+  a:active,
+  a:visited,
+  a:hover {
+    color:           #000000;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .table i{
+    cursor: pointer;
+  }
+
+  
