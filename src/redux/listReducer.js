@@ -181,10 +181,6 @@ const initialState={
 }
 
 
-
-
-
-
 const reducerFilterComedy=(state)=>{
   return {
     ...state,
@@ -215,14 +211,6 @@ const reducerAllGeneresMovies=(state)=>{
 
 }
 }
-
-
-
-
-
-
-
-
 
 const reducer=(state=initialState ,action )=>{
     switch (action.type) {
