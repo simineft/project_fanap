@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Fri Jun 07 2019 22:38:45 GMT+0430 (Iran Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/components/tableList.js
+* src/redux/listReducer.js
+
+
+Created files:
+* .autogit/logs/log-7-5-2019-22-8-43.txt
+
+
+Deleted files:
+
+
+Renamed files:

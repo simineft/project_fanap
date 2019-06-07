@@ -119,6 +119,31 @@ const reducerFilterComedy=(state)=>{
 
 }
 
+const reducerFilterAction=(state)=>{
+    return{
+      ...state,
+       movies:state.movies.filter(item =>item.genre.name==="Action")   
+   }
+}
+
+const reducerFilterThriller=(state)=>{
+  return{
+    ...state,
+     movies:state.movies.length>0
+     ?state.movies.filter(item =>item.genre.name==="Thriller")
+     :"yyyyyyyyyyy"
+
+}
+}
+
+const reducerAllGeneresMovies=(state)=>{
+  return{
+    ...state,
+     movies: state.movies
+
+}
+}
+
 
 
 const reducer=(state=initialState ,action )=>{
@@ -133,26 +158,17 @@ const reducer=(state=initialState ,action )=>{
                   ...state,
                 movies:state.movies.sort((a,b)=> a.numberInStock-b.numberInStock)
             }
-        case ALL_GENRES_MOVIES:
-              return{
-                    ...state,
-                    movies:state.movies 
-                }
-        case ACTION_MOVIES:
-               return{
-                   ...state,
-                    movies:state.movies.filter(item =>item.genre.name==="Action")   
-                }
+        case ALL_GENRES_MOVIES:return  reducerAllGeneresMovies(state)
+             
+        case ACTION_MOVIES:return  reducerFilterAction(state)
+              
         case  COMEDY_MOVIES:return reducerFilterComedy(state)
-        case THRILLER_MOVIES:
-               return{
-                      ...state,
-                       movies: state.movies.filter(item =>item.genre.name==="Thriller")
-       
-                }
+
+        case THRILLER_MOVIES:return reducerFilterThriller(state)
+              
               
          default:
-                return state;
+              return state;
     }
 
 }
