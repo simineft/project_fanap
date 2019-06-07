@@ -4,15 +4,14 @@ import {removeFromtable,sortListTable, actionMovies,comedyMovies,thrillerMovies,
 import MyLike from "../components/myLike"
 import Like from './like';
 import './tableList.css';
-import GroupFindList from './GroupFindList';
 
 
 class ListMovie extends Component {
   state={
     mysort:[],
     currentPage: 1,
-    totalPage:2
-
+    totalPage:2,
+    mySelected:this.props.itemList
   }
     removeUser = id => {
       this.props.removeFromtable(id)
@@ -61,20 +60,21 @@ class ListMovie extends Component {
             </tr> 
           </thead>
           <tbody>
-              {this.props.itemList.map((movie) => (
+              {this.props.itemList.length>0?this.props.itemList.map((movie) => (
               <tr key={movie._id}>
                   <td>{movie.title}</td>
                   <td>{movie.genre.name}</td>
                   <td onClick={this.sortAscending}>{movie.numberInStock}</td>
                   <td>{movie.dailyRentalRate}</td>
-                  
                   <td>{movie.liked? <MyLike /> :<Like/> }</td>
-                 
                   <td>
                     <button className="btn  btn-danger" onClick={() => this.removeUser(movie._id)}>Delete</button>
                   </td>
               </tr>
-              ))}
+              ))
+              :this.state.mySelected
+            
+            }
           </tbody>
       </table>
       )
@@ -85,7 +85,7 @@ class ListMovie extends Component {
 
      
     render() { 
-      console.log(this.props);
+      console.log(this.props,"table");
       
         return (
             <div className="container"  >

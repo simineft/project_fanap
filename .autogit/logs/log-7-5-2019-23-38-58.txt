@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Fri Jun 07 2019 23:38:58 GMT+0430 (Iran Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/redux/listReducer.js
+
+
+Created files:
+* .autogit/logs/log-7-5-2019-23-8-46.txt
+
+
+Deleted files:
+
+
+Renamed files:

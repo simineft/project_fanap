@@ -114,11 +114,8 @@ const initialState={
 const reducerFilterComedy=(state)=>{
   return {
     ...state,
-    // movies:state.movies.map(item =>item.genre.name==="Comedy") 
-    movies:state.movies.map(movie=>{
-      console.log(movie._id);
-      
-    })  
+   movies:state.movies.filter(item =>item.genre.name==="Comedy") 
+    
   }
 
 }
